@@ -1,0 +1,341 @@
+<!-- Canceled Guild — Single‑file HTML + CSS (no frameworks) -->
+<!-- Drop this as index.html on any static host (Netlify, GitHub Pages, etc.) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canceled — World of Warcraft Guild</title>
+  <meta name="description" content="Canceled WoW Guild — Rules, Raid Teams, Profiles, and Discord." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0c12;
+      --card: rgba(15, 23, 42, 0.9);
+      --muted: #94a3b8;
+      --text: #e2e8f0;
+      --white: #ffffff;
+      --red-400: #f87171;
+      --red-500: #ef4444;
+      --red-600: #dc2626;
+      --red-700: #b91c1c;
+      --border: rgba(255,255,255,0.06);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg); color: var(--text);
+    }
+    a { color: inherit; }
+    h1,h2,h3 { color: var(--white); letter-spacing: -0.5px; }
+    h1 { font-weight: 900; }
+    h2 { font-weight: 800; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    /* Header */
+    .topbar { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(6px); background: rgba(10,12,18,0.7); border-bottom: 1px solid var(--border); }
+    .nav { display:flex; align-items:center; justify-content:space-between; padding: 0.8rem 0; }
+    .brand { display:flex; align-items:center; gap: 10px; color: var(--white); font-weight: 900; letter-spacing: 3px; }
+    .menu { display:none; gap:20px; color:#cbd5e1; }
+    .menu a { text-decoration:none; }
+    @media (min-width: 768px) { .menu { display:flex; } }
+    .btn-red { background: linear-gradient(90deg, var(--red-600), var(--red-700)); color:white; font-weight:700; padding:.6rem 1rem; border-radius: 12px; text-decoration:none; display:inline-flex; align-items:center; gap:.4rem }
+    .btn-outline { border: 1px solid var(--border); color:white; padding:.6rem 1rem; border-radius:12px; text-decoration:none; }
+    .btn-outline:hover { background: rgba(255,255,255,0.06); }
+    /* Hero */
+    .hero { position: relative; padding: 4rem 0; background: radial-gradient( ellipse at top, rgba(220,38,38,0.25), rgba(10,12,18,0)); }
+    .hero-grid { display:grid; gap: 2rem; }
+    @media (min-width: 1024px){ .hero-grid { grid-template-columns: 1fr 1fr; align-items:center; }}
+    .callouts { margin-top: 1.5rem; display:grid; gap:1rem; grid-template-columns: 1fr; }
+    @media (min-width: 640px){ .callouts { grid-template-columns: repeat(3, 1fr); }}
+    /* Cards */
+    .card-wrap { background: linear-gradient(135deg, rgba(239,68,68,0.5), rgba(15,23,42,0.9)); border-radius: 16px; padding: 1px; }
+    .card { background: var(--card); border:1px solid var(--border); border-radius:16px; padding: 1.25rem; box-shadow: 0 0 24px rgba(0,0,0,.45); }
+    .muted { color:#cbd5e1; }
+    .tiny { font-size: .85rem; color: #a8b0bd; }
+    /* Sections */
+    .section { padding: 4rem 0; }
+    .eyebrow { display:inline-block; padding:.25rem .75rem; border-radius:9999px; background: rgba(239,68,68,.1); color:#fca5a5; font-size:.7rem; text-transform:uppercase; letter-spacing:1px; }
+    .section-title { text-align:center; margin-bottom: 1.6rem; }
+    /* Grids */
+    .grid { display:grid; gap:1rem; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 900px){ .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+    /* Team badges */
+    .team-badge { display:inline-block; padding:.25rem 1rem; border-radius:9999px; color:white; font-size:.7rem; text-transform:uppercase; font-weight:800; }
+    .team-red { background: linear-gradient(90deg, var(--red-600), #7f1d1d); }
+    .team-gray { background: linear-gradient(90deg, #475569, #1e293b); }
+    /* Footer */
+    footer { border-top:1px solid var(--border); padding: 2rem 0; color:var(--muted); text-align:center; }
+    footer .links { display:flex; gap:18px; justify-content:center; margin-top:.75rem; }
+    footer a { text-decoration:none; color:var(--muted); }
+    footer a:hover { color:white; }
+    /* Simple icon circles */
+    .icon { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: rgba(239,68,68,0.12); color: #fda4a4; font-weight:900; }
+    /* Lists */
+    ul.rules { list-style:none; padding:0; margin:0; }
+    ul.rules li { display:flex; gap:.75rem; align-items:flex-start; }
+    ul.rules li + li { margin-top: .9rem; }
+  </style>
+</head>
+<body>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">CANCELED <span style="font-size:.9rem; font-weight:700; color:#cbd5e1; letter-spacing:0">World of Warcraft</span></div>
+      <div class="menu">
+        <a href="#rules">Rules</a>
+        <a href="#teams">Raid Teams</a>
+        <a href="#links">Profiles</a>
+        <a href="#join">Join</a>
+      </div>
+      <a class="btn-red" href="https://discord.gg/canceledwow">Join Discord</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height:1.1;">Canceled <span style="color:var(--red-500)">Rules</span> &<br> Raid Teams</h1>
+        <p class="muted" style="max-width: 48ch; margin-top: 1rem;">Semi‑hardcore raiding. Zero‑toxicity. All vibe.</p>
+        <div style="margin-top:1rem; display:flex; gap:.75rem; flex-wrap: wrap;">
+          <a class="btn-red" href="https://discord.gg/canceledwow">Join the Discord</a>
+          <a class="btn-outline" href="#teams">See Teams</a>
+        </div>
+        <div class="callouts">
+          <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
+            <div class="icon">M</div>
+            <div><strong>Mythic Raiding</strong><div class="tiny">Three semi‑hardcore teams progressing each tier.</div></div>
+          </div></div></div>
+          <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
+            <div class="icon">K</div>
+            <div><strong>Keys & PvP</strong><div class="tiny">Active Mythic+ and arenas with friendly coaching.</div></div>
+          </div></div></div>
+          <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
+            <div class="icon">E</div>
+            <div><strong>Adult Schedules</strong><div class="tiny">Late‑evening EST raids for working professionals.</div></div>
+          </div></div></div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card-wrap"><div class="card">
+          <div style="display:flex; gap:1rem; align-items:center;">
+            <div class="icon">⚑</div>
+            <div>
+              <div style="font-weight:800; color:white; font-size:1.25rem;">Welcome to the Canceled Discord</div>
+              <div class="tiny">This is the beginning of this server.</div>
+            </div>
+          </div>
+          <div class="card" style="margin-top: .9rem; background: rgba(0,0,0,.25);">
+            Tip: Pin this page in your #rules channel so new members see it first.
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules -->
+  <section id="rules" class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Guild Rules & Expectations</span>
+        <h2 style="margin: .6rem 0 0">Code of Conduct</h2>
+        <p class="muted" style="max-width: 60ch; margin: .5rem auto 0;">Short, clear expectations that keep our community safe and fun.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">🛡</div><div><strong>Respect & Courtesy</strong><div class="tiny">Harassment, discrimination, or toxic behavior is an instant exit.</div></div></li>
+          </ul>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">✨</div><div><strong>Positive Atmosphere</strong><div class="tiny">Supportive, engaging environment. No dehumanizing language.</div></div></li>
+          </ul>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">💬</div><div><strong>Communication</strong><div class="tiny">Clarity and teamwork in raids, Mythic+, and chats. Keep conflicts out of public channels.</div></div></li>
+          </ul>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">🏦</div><div><strong>Guild Bank Integrity</strong><div class="tiny">Take what you need, follow policies, report issues to leadership.</div></div></li>
+          </ul>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">🤝</div><div><strong>Brotherhood in Battle</strong><div class="tiny">Assist guildmates—no warrior left behind.</div></div></li>
+          </ul>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">📜</div><div><strong>Leadership Decisions</strong><div class="tiny">Leadership acts in the guild’s best interest. Bring constructive feedback.</div></div></li>
+          </ul>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <ul class="rules">
+            <li><div class="icon">❤️</div><div><strong>Human Resources</strong><div class="tiny">DM @Human Resources for mediation, support, or dispute resolution.</div></div></li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teams -->
+  <section id="teams" class="section" style="background: linear-gradient(180deg, rgba(10,12,18,1), rgba(0,0,0,.2));">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Raid Teams & Progression</span>
+        <h2 style="margin-top:.6rem">Find Your Squad</h2>
+        <p class="muted" style="max-width:60ch; margin:.5rem auto 0;">Choose a schedule and culture that fits you. Apply or DM the contacts listed.</p>
+      </div>
+
+      <div style="margin:2rem 0 .75rem" class="team-badge team-red">Semi‑Hardcore Mythic Teams</div>
+      <div class="grid grid-3">
+        <div class="card-wrap"><div class="card">
+          <h3 style="margin:0;">Redacted</h3>
+          <div class="tiny">Semi‑Hardcore Mythic | CE‑driven</div>
+          <div style="margin-top:.5rem; font-weight:700;">Wed/Thu 8:30–11:30 PM EST</div>
+          <p class="tiny" style="margin-top:.5rem;">High‑performance team focused on Cutting Edge and improving each tier.</p>
+          <div class="tiny" style="margin-top:.5rem;">Contact: @St. Chexterino, @Windonks</div>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <h3 style="margin:0;">Expunged</h3>
+          <div class="tiny">Semi‑Hardcore Mythic | Family‑like progression</div>
+          <div style="margin-top:.5rem; font-weight:700;">Fri/Sat 8:15–11:15 PM EST</div>
+          <p class="tiny" style="margin-top:.5rem;">Balances competitive raiding with fun in a supportive, consistent environment.</p>
+          <div class="tiny" style="margin-top:.5rem;">Contact: @FilthyFew, @kattrice</div>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <h3 style="margin:0;">Omitted</h3>
+          <div class="tiny">Midcore Mythic | Not CE‑focused</div>
+          <div style="margin-top:.5rem; font-weight:700;">Sat/Sun 6:00–9:00 PM EST</div>
+          <p class="tiny" style="margin-top:.5rem;">Weekend raiders who push limits while fostering teamwork—organized and welcoming.</p>
+          <div class="tiny" style="margin-top:.5rem;">Contact: @Freyjà ❌❌❌, @Skaði</div>
+        </div></div>
+      </div>
+
+      <div style="margin:2rem 0 .75rem" class="team-badge team-gray">AOTC & Casual Teams</div>
+      <div class="grid grid-3">
+        <div class="card-wrap"><div class="card">
+          <h3 style="margin:0;">Nullified</h3>
+          <div class="tiny">AOTC+ | 30‑somethings with style</div>
+          <div style="margin-top:.5rem; font-weight:700;">Tues/Wed 7:30–10:30 PM EST</div>
+          <p class="tiny" style="margin-top:.5rem;">Bossing with fun, accountability, and growth. Casual Mythic possible.</p>
+          <div class="tiny" style="margin-top:.5rem;">Contact: @Couchee</div>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <h3 style="margin:0;">Rephreshed</h3>
+          <div class="tiny">Casual AOTC | Relaxed vibes</div>
+          <div style="margin-top:.5rem; font-weight:700;">Wed/Thu 9:30–11:30 PM EST</div>
+          <p class="tiny" style="margin-top:.5rem;">Enjoyable raid experience with no pressure—just clean fun.</p>
+          <div class="tiny" style="margin-top:.5rem;">Contact: @Zesty Phresh</div>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <h3 style="margin:0;">Censored</h3>
+          <div class="tiny">Casual AOTC | Super‑casual, non‑rostered</div>
+          <div style="margin-top:.5rem; font-weight:700;">Mon 9:00–10:30 PM EST</div>
+          <p class="tiny" style="margin-top:.5rem;">Zero‑pressure environment with fun and learning as the priority.</p>
+          <div class="tiny" style="margin-top:.5rem;">Contact: @Auntie Plethy, @Cuzdraven</div>
+        </div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guild Profiles & Links -->
+  <section id="links" class="section">
+    <div class="container">
+      <div class="section-title">
+        <span class="eyebrow">Guild Profiles & Links</span>
+        <h2 style="margin-top:.6rem">Follow Our Progress</h2>
+        <p class="muted" style="max-width:60ch; margin:.5rem auto 0;">Official profiles and tools for tracking our raids and roster.</p>
+      </div>
+      <div class="grid grid-3">
+        <a href="#" style="text-decoration:none;">
+          <div class="card-wrap"><div class="card">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div><div style="font-weight:700; color:white;">
+                <a class="warcraft-logs" href="https://raider.io/guilds/us/area-52/Canceled">Raider.io</a>
+              </div>
+              <div class="tiny">Guild profile</div>
+            </div>
+              <div style="color:var(--muted)">↗</div>
+            </div>
+          </div></div>
+        </a>
+        <a href="#" style="text-decoration:none;">
+          <div class="card-wrap"><div class="card">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div><div style="font-weight:700; color:white;">
+                <a class="warcraft-logs" href="https://www.warcraftlogs.com/guild/id/758228">Warcraft Logs</a>
+              </div>
+              <div class="tiny">Progress & parses</div>
+            </div>
+              <div style="color:var(--muted)">↗</div>
+            </div>
+          </div></div>
+        </a>
+        <a href="#" style="text-decoration:none;">
+          <div class="card-wrap"><div class="card">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div><div style="font-weight:700; color:white;">
+                <a class="guilds-of-wow" href="https://guildsofwow.com/canceled">Guilds of WoW</a>
+              </div>
+              <div class="tiny">Roster & widgets</div>
+            </div>
+              <div style="color:var(--muted)">↗</div>
+            </div>
+          </div></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Join CTA -->
+  <section id="join" class="section" style="background: radial-gradient( ellipse at bottom, rgba(220,38,38,.25), rgba(10,12,18,0));">
+    <div class="container">
+      <div class="card-wrap"><div class="card">
+        <div style="display:grid; gap:1.25rem; align-items:center;">
+          <div>
+            <h3 style="margin:0; color:white; font-size:1.6rem;">Ready to join Canceled?</h3>
+            <p class="muted" style="margin:.5rem 0 0;">Hop into our Discord to chat with leadership, pick a raid team, and get the ball rolling. Keep screenshots of your logs handy.</p>
+            <div style="margin-top:1rem; display:flex; gap:.75rem; flex-wrap:wrap;">
+              <a class="btn-red" href="https://discord.gg/canceledwow">Join Discord</a>
+              <a class="btn-outline" href="#">Apply Now</a>
+            </div>
+          </div>
+          <div class="card" style="background: rgba(0,0,0,.25);">
+            <ul style="margin:0; padding-left: 1.1rem;">
+              <li>Set your server nickname to your in‑game name.</li>
+              <li>Choose your roles/specs in <b>#channels-and-roles</b>.</li>
+              <li>Read <b>#rules</b> and say hi in <b>#general</b>.</li>
+            </ul>
+          </div>
+        </div>
+      </div></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© <span id="year"></span> Canceled — A World of Warcraft Guild</div>
+      <div class="links">
+        <a href="#rules">Rules</a>
+        <a href="#teams">Raid Teams</a>
+        <a href="#links">Profiles</a>
+        <a href="https://discord.gg/canceledwow">Discord</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
