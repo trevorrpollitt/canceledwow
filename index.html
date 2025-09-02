@@ -13,7 +13,7 @@
   <style>
     :root {
       --bg: #0a0c12;
-      --card: rgba(15, 23, 42, 0.9);
+      --card: rgba(30, 33, 36, 1);
       --muted: #94a3b8;
       --text: #e2e8f0;
       --white: #ffffff;
@@ -45,7 +45,7 @@
     .btn-outline { border: 1px solid var(--border); color:white; padding:.6rem 1rem; border-radius:12px; text-decoration:none; }
     .btn-outline:hover { background: rgba(255,255,255,0.06); }
     /* Hero */
-    .hero { position: relative; padding: 4rem 0; background: radial-gradient( ellipse at top, rgba(220,38,38,0.25), rgba(10,12,18,0)); }
+    .hero { position: relative; padding: 4rem 0; background: linear-gradient(rgba(220,38,38,0.25), rgba(10,12,18,0.7)); }
     .hero-grid { display:grid; gap: 2rem; }
     @media (min-width: 1024px){ .hero-grid { grid-template-columns: 1fr 1fr; align-items:center; }}
     .callouts { margin-top: 1.5rem; display:grid; gap:1rem; grid-template-columns: 1fr; }
@@ -53,8 +53,19 @@
     /* Discord */
     .discord-embed { max-width: 600px; width: 100%; border-radius: 12px; overflow: hidden; }
     /* Cards */
-    .card-wrap { background: linear-gradient(135deg, rgba(239,68,68,0.5), rgba(15,23,42,0.9)); border-radius: 16px; padding: 1px; }
-    .card { background: var(--card); border:1px solid var(--border); border-radius:16px; padding: 1.25rem; box-shadow: 0 0 24px rgba(0,0,0,.45); }
+    .callouts {display: flex; gap: 1rem; }
+    .card-wrap {
+      flex: 1;              /* all cards share equal width */
+      display: flex;        /* allow stretching */
+    }
+    .card {
+      flex: 1;              /* make inner card stretch to equal height */
+      background: var(--card);
+      /* border: 2px solid #7f1d1d; */
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 0 24px rgba(0,0,0,.45);
+    }
     .muted { color:#cbd5e1; }
     .tiny { font-size: .85rem; color: #a8b0bd; }
     /* Sections */
@@ -91,7 +102,7 @@
       <div class="menu">
         <a href="#rules">Rules</a>
         <a href="#teams">Raid Teams</a>
-        <a href="#links">Links</a>
+        <a href="#links">Profiles</a>
         <a href="#join">Join</a>
       </div>
       <a class="btn-red" href="https://discord.gg/canceledwow">Join Discord</a>
@@ -102,23 +113,23 @@
   <section class="hero">
     <div class="container hero-grid">
       <div>
-        <h1 style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height:1.1;">Canceled <span style="color:var(--red-500)">Rules</span> &<br> Raid Teams</h1>
-        <p class="muted" style="max-width: 48ch; margin-top: 1rem;">Semi‑hardcore raiding. Zero‑toxicity. All vibe.</p>
+        <h1 style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height:1.1;">Canceled Guild</h1>
+        <p class="muted" style="max-width: 48ch;">Semi‑hardcore raiding. Zero‑toxicity. All vibe.</p>
         <!-- Removed button div, kept spacing with margin-top -->
         <div style="margin-top:1rem;"></div>
         <div class="callouts">
           <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
-            <div class="icon">M</div>
+            <div class="icon">⚔️</div>
             <div><strong>Mythic Raiding</strong><div class="tiny">Three semi‑hardcore teams progressing each tier.</div></div>
           </div></div></div>
           <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
-            <div class="icon">K</div>
+            <div class="icon">🔑</div>
             <div><strong>Keys & PvP</strong><div class="tiny">Active Mythic+ and arenas with friendly coaching.</div></div>
           </div></div></div>
-          <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
-            <div class="icon">E</div>
+          <!-- <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
+            <div class="icon">📅</div>
             <div><strong>Adult Schedules</strong><div class="tiny">Late‑evening EST raids for working professionals.</div></div>
-          </div></div></div>
+          </div></div></div> -->
         </div>
       </div>
 
@@ -178,12 +189,12 @@
   </section>
 
   <!-- Teams -->
-  <section id="teams" class="section" style="background: linear-gradient(180deg, rgba(10,12,18,1), rgba(0,0,0,.2));">
+  <section id="teams" class="section" style="background: rgba(10,12,18,0.7);">
     <div class="container">
       <div class="section-title">
         <span class="eyebrow">Raid Teams & Progression</span>
         <h2 style="margin-top:.6rem">Find Your Squad</h2>
-        <p class="muted" style="max-width:60ch; margin:.5rem auto 0;">Choose a schedule and culture that fits you. Apply or DM the contacts listed.</p>
+        <p class="muted" style="max-width:60ch; margin:.5rem auto 0;">Choose a schedule and culture that fits you. Apply below.</p>
       </div>
 
       <div style="margin:2rem 0 .75rem" class="team-badge team-red">Semi‑Hardcore Mythic Teams</div>
@@ -194,7 +205,7 @@
           <div class="tiny">Semi‑Hardcore Mythic | Midcore CE-focused</div>
           <div style="margin-top:.5rem; font-weight:700;">Wed/Thu 8:30–11:30 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">High‑performance team focused on Cutting Edge and improving each tier.</p>
-          <div class="tiny" style="margin-top:.5rem;">Contact: @St. Chexterino, @Windonks</div>
+          <div class="tiny" style="margin-top:.5rem;">Contact (discord): @chexty0, @wynndecks</div>
         </div></div>
         </a>
         <a class="expunged-link" style="text-decoration:none" href="https://www.warcraftlogs.com/guild/id/787360">
@@ -203,7 +214,7 @@
           <div class="tiny">Semi‑Hardcore Mythic | Midcore CE-focused</div>
           <div style="margin-top:.5rem; font-weight:700;">Fri/Sat 8:15–11:15 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">Balances competitive raiding with fun in a supportive, consistent environment.</p>
-          <div class="tiny" style="margin-top:.5rem;">Contact: @FilthyFew, @kattrice</div>
+          <div class="tiny" style="margin-top:.5rem;">Contact (discord): @filthyfew</div>
         </div></div>
         </a>
         <a class="omitted-link" style="text-decoration:none" href="https://www.warcraftlogs.com/guild/id/787361">
@@ -212,7 +223,7 @@
           <div class="tiny">Midcore Mythic | Not CE‑focused</div>
           <div style="margin-top:.5rem; font-weight:700;">Sat/Sun 6:00–9:00 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">Weekend raiders who push limits while fostering teamwork—organized and welcoming.</p>
-          <div class="tiny" style="margin-top:.5rem;">Contact: @Freyjà ❌❌❌, @Skaði</div>
+          <div class="tiny" style="margin-top:.5rem;">Contact (discord): @freyja3313</div>
         </div></div>
         </a>
       </div>
@@ -224,21 +235,21 @@
           <div class="tiny">AOTC+ | 30‑somethings with style</div>
           <div style="margin-top:.5rem; font-weight:700;">Tues/Wed 7:30–10:30 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">Bossing with fun, accountability, and growth. Casual Mythic possible.</p>
-          <div class="tiny" style="margin-top:.5rem;">Contact: @Couchee</div>
+          <div class="tiny" style="margin-top:.5rem;">Contact (discord): @couchee</div>
         </div></div>
         <div class="card-wrap"><div class="card">
           <h3 style="margin:0;">Rephreshed</h3>
           <div class="tiny">Casual AOTC | Relaxed vibes</div>
           <div style="margin-top:.5rem; font-weight:700;">Wed/Thu 9:30–11:30 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">Enjoyable raid experience with no pressure—just clean fun.</p>
-          <div class="tiny" style="margin-top:.5rem;">Contact: @Zesty Phresh</div>
+          <div class="tiny" style="margin-top:.5rem;">Contact (discord): @zestyphresh</div>
         </div></div>
         <div class="card-wrap"><div class="card">
           <h3 style="margin:0;">Censored</h3>
           <div class="tiny">Casual AOTC | Super‑casual, non‑rostered</div>
           <div style="margin-top:.5rem; font-weight:700;">Mon 9:00–10:30 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">Zero‑pressure environment with fun and learning as the priority.</p>
-          <div class="tiny" style="margin-top:.5rem;">Contact: @Auntie Plethy, @Cuzdraven</div>
+          <div class="tiny" style="margin-top:.5rem;">Contact (discord): @plethorah, @shadq.</div>
         </div></div>
       </div>
     </div>
@@ -288,7 +299,7 @@
   </section>
 
   <!-- Join CTA -->
-  <section id="join" class="section" style="background: radial-gradient( ellipse at bottom, rgba(220,38,38,.25), rgba(10,12,18,0));">
+  <section id="join" class="section" style="background: linear-gradient(rgba(10,12,18,0.7), rgba(220,38,38,0.25));">
     <div class="container">
       <div class="card-wrap"><div class="card">
         <div style="display:grid; gap:1.25rem; align-items:center;">
