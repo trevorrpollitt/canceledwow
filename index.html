@@ -50,14 +50,16 @@
     /* Hero */
     .hero { position: relative; padding: 4rem 0; background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(10,12,18,0.7)); }
     .hero-grid { display:grid; gap: 2rem; position: relative; background: var(--background-color); overflow: hidden; }
-    .hero-grid::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url('./canceled_logo.png') no-repeat left center;
-      background-size: 45%;  /* scale logo */
-      opacity: 0.5;          /* make it subtle */
-      pointer-events: none;  /* don’t block clicks */
+    @media (min-width: 1024px) {
+      .hero-grid::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('./canceled_logo.png') no-repeat left center;
+        background-size: 45%;  /* scale logo */
+        opacity: 0.5;          /* make it subtle */
+        pointer-events: none;  /* don’t block clicks */
+      }
     }
     .hero-grid > * {
       position: relative;
@@ -67,6 +69,11 @@
     .callouts { margin-top: 1.5rem; display:grid; gap:1rem; grid-template-columns: 1fr; }
     @media (min-width: 640px){ .callouts { grid-template-columns: repeat(3, 1fr); }}
     /* Discord */
+    @media (max-width: 768px) {
+      .discord-embed {
+        display: none;
+      }
+    }
     .discord-embed { max-width: 600px; width: 100%; border-radius: 12px; overflow: hidden; }
     /* Cards */
     .callouts {display: flex; gap: 1rem; }
