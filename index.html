@@ -50,6 +50,8 @@
     @media (min-width: 1024px){ .hero-grid { grid-template-columns: 1fr 1fr; align-items:center; }}
     .callouts { margin-top: 1.5rem; display:grid; gap:1rem; grid-template-columns: 1fr; }
     @media (min-width: 640px){ .callouts { grid-template-columns: repeat(3, 1fr); }}
+    /* Discord */
+    .discord-embed { max-width: 600px; width: 100%; border-radius: 12px; overflow: hidden; }
     /* Cards */
     .card-wrap { background: linear-gradient(135deg, rgba(239,68,68,0.5), rgba(15,23,42,0.9)); border-radius: 16px; padding: 1px; }
     .card { background: var(--card); border:1px solid var(--border); border-radius:16px; padding: 1.25rem; box-shadow: 0 0 24px rgba(0,0,0,.45); }
@@ -89,7 +91,7 @@
       <div class="menu">
         <a href="#rules">Rules</a>
         <a href="#teams">Raid Teams</a>
-        <a href="#links">Profiles</a>
+        <a href="#links">Links</a>
         <a href="#join">Join</a>
       </div>
       <a class="btn-red" href="https://discord.gg/canceledwow">Join Discord</a>
@@ -102,10 +104,8 @@
       <div>
         <h1 style="font-size: clamp(2.25rem, 4vw, 3.5rem); line-height:1.1;">Canceled <span style="color:var(--red-500)">Rules</span> &<br> Raid Teams</h1>
         <p class="muted" style="max-width: 48ch; margin-top: 1rem;">Semi‑hardcore raiding. Zero‑toxicity. All vibe.</p>
-        <div style="margin-top:1rem; display:flex; gap:.75rem; flex-wrap: wrap;">
-          <a class="btn-red" href="https://discord.gg/canceledwow">Join the Discord</a>
-          <a class="btn-outline" href="#teams">See Teams</a>
-        </div>
+        <!-- Removed button div, kept spacing with margin-top -->
+        <div style="margin-top:1rem;"></div>
         <div class="callouts">
           <div class="card-wrap"><div class="card"><div style="display:flex; gap:.75rem; align-items:flex-start;">
             <div class="icon">M</div>
@@ -122,19 +122,9 @@
         </div>
       </div>
 
-      <div>
-        <div class="card-wrap"><div class="card">
-          <div style="display:flex; gap:1rem; align-items:center;">
-            <div class="icon">⚑</div>
-            <div>
-              <div style="font-weight:800; color:white; font-size:1.25rem;">Welcome to the Canceled Discord</div>
-              <div class="tiny">This is the beginning of this server.</div>
-            </div>
-          </div>
-          <div class="card" style="margin-top: .9rem; background: rgba(0,0,0,.25);">
-            Tip: Pin this page in your #rules channel so new members see it first.
-          </div>
-        </div></div>
+      <!-- Discord embed -->
+      <div class="discord-embed">
+        <iframe src="https://discord.com/widget?id=1282068816116977695&theme=dark/###" width="560" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       </div>
     </div>
   </section>
@@ -198,20 +188,25 @@
 
       <div style="margin:2rem 0 .75rem" class="team-badge team-red">Semi‑Hardcore Mythic Teams</div>
       <div class="grid grid-3">
+        <a class="redacted-link" style="text-decoration:none" href="https://www.warcraftlogs.com/guild/id/787359">
         <div class="card-wrap"><div class="card">
           <h3 style="margin:0;">Redacted</h3>
-          <div class="tiny">Semi‑Hardcore Mythic | CE‑driven</div>
+          <div class="tiny">Semi‑Hardcore Mythic | Midcore CE-focused</div>
           <div style="margin-top:.5rem; font-weight:700;">Wed/Thu 8:30–11:30 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">High‑performance team focused on Cutting Edge and improving each tier.</p>
           <div class="tiny" style="margin-top:.5rem;">Contact: @St. Chexterino, @Windonks</div>
         </div></div>
+        </a>
+        <a class="expunged-link" style="text-decoration:none" href="https://www.warcraftlogs.com/guild/id/787360">
         <div class="card-wrap"><div class="card">
           <h3 style="margin:0;">Expunged</h3>
-          <div class="tiny">Semi‑Hardcore Mythic | Family‑like progression</div>
+          <div class="tiny">Semi‑Hardcore Mythic | Midcore CE-focused</div>
           <div style="margin-top:.5rem; font-weight:700;">Fri/Sat 8:15–11:15 PM EST</div>
           <p class="tiny" style="margin-top:.5rem;">Balances competitive raiding with fun in a supportive, consistent environment.</p>
           <div class="tiny" style="margin-top:.5rem;">Contact: @FilthyFew, @kattrice</div>
         </div></div>
+        </a>
+        <a class="omitted-link" style="text-decoration:none" href="https://www.warcraftlogs.com/guild/id/787361">
         <div class="card-wrap"><div class="card">
           <h3 style="margin:0;">Omitted</h3>
           <div class="tiny">Midcore Mythic | Not CE‑focused</div>
@@ -219,6 +214,7 @@
           <p class="tiny" style="margin-top:.5rem;">Weekend raiders who push limits while fostering teamwork—organized and welcoming.</p>
           <div class="tiny" style="margin-top:.5rem;">Contact: @Freyjà ❌❌❌, @Skaði</div>
         </div></div>
+        </a>
       </div>
 
       <div style="margin:2rem 0 .75rem" class="team-badge team-gray">AOTC & Casual Teams</div>
@@ -257,42 +253,36 @@
         <p class="muted" style="max-width:60ch; margin:.5rem auto 0;">Official profiles and tools for tracking our raids and roster.</p>
       </div>
       <div class="grid grid-3">
-        <a href="#" style="text-decoration:none;">
-          <div class="card-wrap"><div class="card">
-            <div style="display:flex; align-items:center; justify-content:space-between;">
-              <div><div style="font-weight:700; color:white;">
-                <a class="warcraft-logs" href="https://raider.io/guilds/us/area-52/Canceled">Raider.io</a>
-              </div>
-              <div class="tiny">Guild profile</div>
+        <div class="card-wrap"><div class="card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-weight:700; color:white;">
+              <a class="warcraft-logs" href="https://raider.io/guilds/us/area-52/Canceled">Raider.io</a>
             </div>
-              <div style="color:var(--muted)">↗</div>
+            <div class="tiny">Guild profile</div>
+          </div>
+            <div style="color:var(--muted)">↗</div>
+          </div>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-weight:700; color:white;">
+              <a class="warcraft-logs" href="https://www.warcraftlogs.com/guild/id/758228">Warcraft Logs</a>
             </div>
-          </div></div>
-        </a>
-        <a href="#" style="text-decoration:none;">
-          <div class="card-wrap"><div class="card">
-            <div style="display:flex; align-items:center; justify-content:space-between;">
-              <div><div style="font-weight:700; color:white;">
-                <a class="warcraft-logs" href="https://www.warcraftlogs.com/guild/id/758228">Warcraft Logs</a>
-              </div>
-              <div class="tiny">Progress & parses</div>
+            <div class="tiny">Progress & parses</div>
+          </div>
+            <div style="color:var(--muted)">↗</div>
+          </div>
+        </div></div>
+        <div class="card-wrap"><div class="card">
+          <div style="display:flex; align-items:center; justify-content:space-between;">
+            <div><div style="font-weight:700; color:white;">
+              <a class="guilds-of-wow" href="https://guildsofwow.com/canceled">Guilds of WoW</a>
             </div>
-              <div style="color:var(--muted)">↗</div>
-            </div>
-          </div></div>
-        </a>
-        <a href="#" style="text-decoration:none;">
-          <div class="card-wrap"><div class="card">
-            <div style="display:flex; align-items:center; justify-content:space-between;">
-              <div><div style="font-weight:700; color:white;">
-                <a class="guilds-of-wow" href="https://guildsofwow.com/canceled">Guilds of WoW</a>
-              </div>
-              <div class="tiny">Roster & widgets</div>
-            </div>
-              <div style="color:var(--muted)">↗</div>
-            </div>
-          </div></div>
-        </a>
+            <div class="tiny">Roster & widgets</div>
+          </div>
+            <div style="color:var(--muted)">↗</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -304,17 +294,18 @@
         <div style="display:grid; gap:1.25rem; align-items:center;">
           <div>
             <h3 style="margin:0; color:white; font-size:1.6rem;">Ready to join Canceled?</h3>
-            <p class="muted" style="margin:.5rem 0 0;">Hop into our Discord to chat with leadership, pick a raid team, and get the ball rolling. Keep screenshots of your logs handy.</p>
+            <p class="muted" style="margin:.5rem 0 0;">Hop into our Discord to chat with leadership, pick a raid team, and apply to raid so we can get the ball rolling.</p>
             <div style="margin-top:1rem; display:flex; gap:.75rem; flex-wrap:wrap;">
               <a class="btn-red" href="https://discord.gg/canceledwow">Join Discord</a>
-              <a class="btn-outline" href="#">Apply Now</a>
+              <a class="btn-outline" href="https://discord.gg/G73c5Txm">Apply Now</a>
             </div>
           </div>
           <div class="card" style="background: rgba(0,0,0,.25);">
             <ul style="margin:0; padding-left: 1.1rem;">
+              <li>Choose your roles/specs/professions during server onboarding.</li>
               <li>Set your server nickname to your in‑game name.</li>
-              <li>Choose your roles/specs in <b>#channels-and-roles</b>.</li>
-              <li>Read <b>#rules</b> and say hi in <b>#general</b>.</li>
+              <li>Read <b>#Canceled</b> and say hi in <b>#general-chat</b>.</li>
+              <li>Apply to raid using our ticketing system in #raid-application</b>.</li>
             </ul>
           </div>
         </div>
