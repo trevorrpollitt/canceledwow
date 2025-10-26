@@ -1,0 +1,14 @@
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding: 2rem 0;
+  color: #94a3b8; /* muted text */
+  text-align: center;
+  background: rgba(10,12,18,0.7);
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

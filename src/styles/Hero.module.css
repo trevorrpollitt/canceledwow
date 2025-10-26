@@ -1,0 +1,91 @@
+.hero {
+  position: relative;
+  padding: 4rem 0;
+  background: linear-gradient(rgba(255, 0, 0, 0.5), rgba(10, 12, 18, 0.7));
+  overflow: hidden;
+}
+
+/* background logo for desktop only */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../canceled_logo.png') no-repeat center center;
+  background-size: contain;
+  /* scale logo to fit hero height without clipping */
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.heroGrid {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Desktop: 2 columns — left: stacked callouts, right: Discord */
+@media (min-width: 1024px) {
+  .heroGrid {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+/* Mobile: remove discord embed */
+@media (max-width: 1023px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .discordWrap {
+    display: none;
+  }
+}
+
+.discordWrap {
+  width: 100%;
+  max-width: 560px;
+  overflow: hidden;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4vw, 3.5rem);
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.1;
+  font-weight: 900;
+}
+
+/* Left column containing heading + callouts */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 3rem
+}
+
+/* Callouts container  */
+.calloutsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Emphasized text within hero cards */
+.emphasis {
+  font-weight: 700;
+  color: #fd6666;
+}
+
+.heroCalloutCard {
+  background: #140103 !important;
+  border: none !important;
+  display: flex;
+  flex-direction: row;
+  max-width: 350px;
+}

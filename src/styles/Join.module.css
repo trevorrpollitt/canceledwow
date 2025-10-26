@@ -1,0 +1,87 @@
+.joinSection {
+  padding: 6rem 0;
+  background: linear-gradient(rgba(10,12,18,0.7), rgba(240,0,0,0.35));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.joinGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 900px) {
+  .joinGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.joinCard {
+  background: transparent;
+  border: 1px solid #7a0c0c;
+  border-radius: 14px;
+  padding: 1.5rem;
+}
+
+.joinTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.joinDesc {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+  color: #c8c8c8;
+}
+
+.joinButtons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.joinSteps {
+  list-style-type: disc;
+  padding-left: 1.2rem;
+  color: #c8c8c8;
+}
+
+.btnRed {
+  background: #dc2626;
+  color: white;
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.btnRed:hover {
+  background: #ca5d5d;
+}
+
+.btnOutline {
+  border: 1px solid white;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btnOutline:hover {
+  background: rgba(255, 255, 255, 0.1); /* soft white highlight */
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* subtle glow */
+  cursor: pointer;
+}
+
+.joinCard {
+  border-color: #8f2424 !important; 
+}
+

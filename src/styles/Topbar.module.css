@@ -1,0 +1,94 @@
+:root {
+  --topbar-bg: rgba(0,0,0,0.9);
+  --topbar-border: rgb(233, 69, 69);
+  --brand-color: rgb(255,255,255);
+  --menu-link-color: rgba(255, 43, 43, 0.719);
+  --menu-link-hover: rgb(228, 168, 168);
+  --btn-bg: linear-gradient(90deg, rgba(180, 31, 76, 0.5), rgba(143, 0, 31, 0.5));
+  --btn-bg-hover: linear-gradient(90deg, #a33636, #dc2626);
+  --btn-color: rgb(218, 208, 208);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(6px);
+  background: var(--topbar-bg);
+  border-bottom: 1px solid var(--topbar-border);
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1rem;
+}
+
+.brandLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--brand-color);
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(  --menu-link-color);
+
+}
+
+.menu {
+  display: none;
+  gap: 40px;
+}
+
+.menu a {
+  color: var(--menu-link-color);
+  font-size: 1rem;
+  font-weight: 550;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.menu a:hover {
+  color: var(--menu-link-hover);
+}
+
+@media (min-width: 768px) {
+  .menu {
+    display: flex;
+  }
+}
+
+.btnRed {
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btnRed:hover {
+  background: var(--btn-bg-hover);
+}

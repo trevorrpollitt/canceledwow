@@ -1,0 +1,55 @@
+.calloutCard {
+  background: transparent;         /* default: transparent for most sections */
+  border: 1px solid transparent;   /* thin outline by default, can be colored via style prop */
+  border-radius: 16px;
+  padding: 1.25rem;
+  border-color: #8f2424;
+   gap: 10rem; /* space between cards */
+  box-shadow: 0 0 16px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.calloutCard:hover {
+  border-color: #f87171;
+}
+
+.title {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; 
+  font-weight: 700;       
+  font-size: 1.25rem;
+  color: white;       
+}
+
+.body { 
+  font-size: 0.95rem; 
+  opacity: 0.85; 
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.iconWrap {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardLinkWrapper {
+  text-decoration: none; /* removes underline */
+  color: inherit;         /* keeps text color from the card */
+  display: inline-block;  /* ensures proper spacing */
+  width: 100%;            /* make link fill the card */
+}
+
+.arrow {
+  color: #a8a8a8;
+  font-size: 1.25rem;
+  margin-left: 0.5rem;
+}
