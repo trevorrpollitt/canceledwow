@@ -2,26 +2,34 @@
   text-align: center;
   padding-top: 5rem;
   margin-bottom: 3rem; /* spacing below section title */
+  position: relative;   /* optional if you want absolute positioning later */
 }
 
 .eyebrow {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  border-radius: 9999px;      /* pill shape */
+  border-radius: 9999px;      
   border: 1px solid currentColor;
   background: transparent;     
-  color: #942020;              /* pill text color */
+  color: #942020;              
   font-size: 1.4rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 0.5rem;      /* spacing below pill */
+  margin-bottom: 0.5rem;
 }
 
 .description {
-  color: #a8a8a8;             /* muted text */
+  color: #a8a8a8;             
   font-size: 1.1rem;
   font-weight: 500;
   max-width: 60ch;
   margin: 0.5rem auto 0;
+}
+
+.titleRule {
+  width: 100%;           /* full width */
+  height: 1px;           /* thin line */
+  background: #8b1a1a;   /* same red as your headings */
+  margin-bottom: 6rem;      
 }

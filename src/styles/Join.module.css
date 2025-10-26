@@ -62,10 +62,26 @@
   text-decoration: none;
 }
 
+.btnRed:hover {
+  background: #ca5d5d;
+}
+
 .btnOutline {
   border: 1px solid white;
   color: white;
   padding: 0.6rem 1rem;
   border-radius: 12px;
   text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.btnOutline:hover {
+  background: rgba(255, 255, 255, 0.1); /* soft white highlight */
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2); /* subtle glow */
+  cursor: pointer;
+}
+
+.joinCard {
+  border-color: #8f2424 !important; 
+}
+

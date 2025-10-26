@@ -27,7 +27,6 @@
   letter-spacing: 2px;
 }
 
-
 .muted {
   color: #a8a8a8;
   font-size: 1.1rem;
@@ -51,13 +50,12 @@
 }
 
 .headingRule {
-  width: 100%;
+  width: 25%;
   height: 1px;
   background: #8b1a1a; /* thin subtle line */
   margin-top: 0.75rem;
+  margin: 0.75rem auto 0; 
 }
-
-
 
 .grid {
   display: grid;
@@ -66,6 +64,10 @@
   margin-bottom: 6rem;
 }
 
+.grid> :last-child:nth-child(3n + 1) {
+  grid-column: 2;
+  /* 3 columns, centers solo element*/
+}
 
 @media (max-width: 900px) {
   .grid {
@@ -88,8 +90,6 @@
   text-decoration: none; /* removes underlines from link text */
   color: inherit;        /* keeps the card text colors intact */
 }
-
-
 
 .teamName {
   margin: 0;

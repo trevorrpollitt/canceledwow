@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Rules.module.css";
 import CalloutCard from "./CalloutCard";
 import SectionTitle from "./SectionTitle.jsx";
+import { guildLinks } from "../shared/data/guildInfos.js";
 
 
 export default function Links() {
@@ -12,30 +13,13 @@ export default function Links() {
                     eyebrow="Guild Links"
                     description="Official links for tracking our raids and roster."
                 />
-
                 <div className={`${styles.grid} ${styles.rulesGrid}`}>
-                    <CalloutCard
-                        title="Raider.io"
-                        href="https://raider.io/guilds/us/area-52/Canceled"
-                    >
-                        Guild profile
-                    </CalloutCard>
-
-                    <CalloutCard
-                        title="Warcraft Logs"
-                        href="https://www.warcraftlogs.com/guild/id/758228"
-                    >
-                        Progress & parses
-                    </CalloutCard>
-
-                    <CalloutCard
-                        title="Guilds of WoW"
-                        href="https://guildsofwow.com/canceled"
-                    >
-                        Roster & widgets
-                    </CalloutCard>
+                    {guildLinks.map(link => (
+                        <CalloutCard key={link.title} title={link.title} href={link.href}>
+                            {link.text}
+                        </CalloutCard>
+                    ))}
                 </div>
-
             </div>
         </section>
     );
