@@ -4,8 +4,6 @@ import SectionTitle from "./SectionTitle.jsx";
 import { mythTeamsData } from "../shared/data/guildInfos.js";
 import { aotcTeamsData } from "../shared/data/guildInfos.js";
 
-
-
 export default function Teams() {
   return (
     <section id="teams" className={styles.section}>

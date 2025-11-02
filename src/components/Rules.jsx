@@ -12,7 +12,7 @@ export default function Rules() {
           eyebrow="Code of Conduct"
           description="Short, clear expectations that keep our community safe and fun."
         />
-        <div className={`${styles.grid} ${styles.rulesGrid}`}>
+        <div className={styles.grid}>
           {guildRules.map(rule => (
             <CalloutCard
               key={rule.title}

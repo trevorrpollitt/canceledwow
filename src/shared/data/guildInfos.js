@@ -126,6 +126,7 @@ export const guildLinks = [
     href: "https://guildsofwow.com/canceled",
     text: "Roster & widgets",
   },
+  
 ];
 
 export const joinInfo = {

@@ -4,7 +4,6 @@ import CalloutCard from "./CalloutCard";
 import SectionTitle from "./SectionTitle.jsx";
 import { guildLinks } from "../shared/data/guildInfos.js";
 
-
 export default function Links() {
     return (
         <section id="links" className={styles.rulesSection}>
@@ -13,9 +12,14 @@ export default function Links() {
                     eyebrow="Guild Links"
                     description="Official links for tracking our raids and roster."
                 />
-                <div className={`${styles.grid} ${styles.rulesGrid}`}>
+                <div className={styles.grid}>
                     {guildLinks.map(link => (
-                        <CalloutCard key={link.title} title={link.title} href={link.href}>
+                        <CalloutCard 
+                            key={link.title} 
+                            title={link.title} 
+                            href={link.href} 
+                            className={styles.linksCard} 
+                        >
                             {link.text}
                         </CalloutCard>
                     ))}

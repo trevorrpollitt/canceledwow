@@ -15,7 +15,8 @@ export default function Topbar() {
           }}
         >
           <span className={styles.brand}>CANCELED</span>
-          <span className={styles.subtext}>World of Warcraft Guild</span>
+          <span className={`${styles.subtext} ${styles.desktop}`}>World of Warcraft Guild</span>
+          <span className={`${styles.subtext} ${styles.mobile}`}>WoW Guild</span>
         </a>
         <div className={styles.menu}>
           <a href="#teams">Teams</a>
