@@ -28,7 +28,7 @@
 }
 
 /* Desktop: 2 columns — left: stacked callouts, right: Discord */
-@media (min-width: 1024px) {
+@media (min-width: 769px) {
   .heroGrid {
     grid-template-columns: 1fr auto;
     align-items: start;
@@ -36,7 +36,7 @@
 }
 
 /* Mobile: remove discord embed */
-@media (max-width: 1023px) {
+@media (max-width: 768px) {
   .heroGrid {
     grid-template-columns: 1fr;
   }

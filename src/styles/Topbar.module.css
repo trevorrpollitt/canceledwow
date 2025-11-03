@@ -92,3 +92,21 @@
 .btnRed:hover {
   background: var(--btn-bg-hover);
 }
+
+.desktop {
+  display: inline;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .desktop { display: none; }
+  .mobile { display: inline; }
+}
+
+@media (min-width: 768px) {
+  .desktop { display: inline; }
+  .mobile { display: none; }
+}
