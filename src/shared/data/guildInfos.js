@@ -140,5 +140,5 @@ export const joinInfo = {
     ],
     descriptionNext: "You can also create a ticket directly using the apply button below.",
     discordLink: "https://discord.gg/canceledwow",
-    applyLink: "https://discord.gg/G73c5Txm"
+    applyLink: "https://forms.gle/qS1CgE8Catmb7Lu6A"
 };
